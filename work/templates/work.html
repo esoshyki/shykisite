@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Work</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'games/scripts/comlike.js' %}"></script>
+    <script type="text/javascript" src="{% static 'games/scripts/commentslikes.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/scripts/login.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/scripts/script.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/scripts/videolike.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/scripts/videolikemain.js' %}"></script>
+</head>
+<body style="background-image: url({% static 'img/phon.jpg' %})">
+<div class="container">
+     {% block sign %}{% endblock %}
+    <div style="color: #408000; padding: 20px width: 1200px; height: 1000px">
+      <ul class = "header">
+         <li class="logo"><a href="/"><img src="{% static 'main/img/logo.png' %}" style="width: 80px;" alt="logo"></a></li>
+         <li class="tape"></li>
+      {% if user %}
+          <li class="log"><div class="registration" style="padding: 10px;">
+      <p style="color: white;">{{ user }}</p>
+      <a href="out/" style = "margin: 5px"><button type="button" class="btn btn-info">Выйти</button></a>
+          </div>
+              </li>
+      {% else %}
+                  <li class="reg"><div class="registration" style="padding: 10px;">
+      <a href="sign/" style = "margin: 2px"><button type="button" class="btn btn-dark">Регистрация</button></a>
+      <a href="/games/in/" style = "margin: 5xp"><button type="button" class="btn btn-dark">Войти</button></a>
+
+      <hr>
+      </div></li>
+      {% endif %}
+      </ul>
+
+      {% include "includes/navibar.html" %}
+        <div class="cont" style="background-color: #FFFFE0">
+{% block OneVideo %}{% endblock %}
+{% block mytemplate %}{% endblock %}
+
+            </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% load staticfiles %}
+        {% if request.user.is_authenticated %} <div></div>
+    {% else %}
+        {% if form %}
+		<form action="{{ url }} " method = "post"> {% csrf_token %}
+            <div id="formlogintable">
+            <table >
+            <tr><td><label >ЛОГИН</label></td>
+                <td>{{ form.username }}</td>
+                <td><label>ПАРОЛЬ</label></td>
+                <td><input type="password" {{ form.password }}</td>
+
+             <td><input type="submit" class="button" value="Sign"></td>
+                </tr>
+            </table>
+                </div>
+        {% endif %}
+    {% endif %}
+        </form>
+        {% if formreg %}
+       		<form action="{{ url }} " method = "post"> {% csrf_token %}
+            <div id="formregistrationtable">
+            <table>
+            <tr><td><label >ЛОГИН</label></td>
+                <td>{{ formreg.username }}</td>
+                <td><label>ПАРОЛЬ</label></td>
+                <td><input type="password" {{ formreg.password }}</td>
+                <td><label>ЯЩИК</label></td>
+                <td>{{ formreg.email }}</td>
+
+             <td><input type="submit" class="button" value="Sign"></td>
+                </tr>
+            </table>
+                </div>
+
+        {% if error %}
+            <h5>{{ error }}</h5>
+        {% endif %}
+    {% endif %}
+           </form>
+  <table class="loginandregistration">
+
+    {% if user %}
+    <tr>
+        <td><h5>Привет,</h5></td> <td><h4 style="color:green">{{ user }}</h4></td>
+    <td><h5><a href="/main/out">Выйти</a></h5></td>
+    </tr>
+  {% else %}
+    <tr id="regg">
+      <td><h4><a id="entertosite" href="/main/in">Войти</a></h4></td>
+    <td><h4><a id="reg" class="button" href="/main/reg" style="color:blue">Регистрация</a></h4></td>
+  </tr>
+ {% endif %}
+</table>
+<div class="container-fluide">
+
+  <div class="row" style="padding-left: 22px">
+    <div class="col1">
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Видосики
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/videos/music">Музыка</a>
+          <a class="dropdown-item" href="/videos/basket">Баскет</a>
+          <a class="dropdown-item" href="/videos/programming">Программуха</a>
+        </div>
+      </div>
+  </div>
+  <div class="col2">
+    <div class="dropdown" style="padding-left: 2px">
+      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Статьи в тему
+      </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="/articles/music">Музыка</a>
+      <a class="dropdown-item" href="/articles/basket">Баскет</a>
+      <a class="dropdown-item" href="/articles/programming">Программуха</a>
+      </div>
+    </div>
+  </div>
+  <div class="col3">
+    <div class="dropdown" style="padding-left: 2px">
+      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Моя работа
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/work/arm">Арматура</a>
+        <a class="dropdown-item" href="/work/metall">Металл</a>
+        <a class="dropdown-item" href="/work/trumpets">Трубы</a>
+      </div>
+  </div>
+</div>
+</div>
+</div>

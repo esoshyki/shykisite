@@ -1,0 +1,26 @@
+<h5>
+        {% if request.user.is_authenticated %} <div></div>
+    {% else %}
+
+		<form action="{{ url }} " method = "post"> {% csrf_token %}
+            <div id="formlogintable">
+            <table >
+            <tr><td><label >ЛОГИН</label></td>
+                <td>{{ form.username }}</td>
+                <td><label>ПАРОЛЬ</label></td>
+                <td><input type="password" form ='{{ form.password }}'></td>
+
+             <td><input type="submit" class="button" value="Sign"></td>
+                </tr>
+            </table>
+                </div>
+    {% endif %}
+
+
+
+        </form>
+
+        {% if error %}
+            <h1>{{ error }}</h1>
+        {% endif %}
+</h5>
