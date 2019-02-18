@@ -13,6 +13,7 @@ class Video(models.Model):
     Video_dis = models.TextField()
     Video_date = models.DateTimeField(auto_now_add=True)
     Video_likes = models.IntegerField(default=0)
+    Video_type = models.CharField(max_length=50, default="Basket")
 
     def __str__(self):
         return self.Video_name

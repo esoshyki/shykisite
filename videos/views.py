@@ -9,9 +9,9 @@ from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate
 
-def show(request):
+def showmusic(request):
     content = []                  #[  [video, [(comment, name),(comment,name),()]]   ,  [video, [comments..]]     ]
-    for vid in Video.objects.all():
+    for vid in Video.objects.filter(Video_type="Music"):
         tmp = []
         tmp.append(vid)
         comments = Comment.objects.filter(Comment_Video_id=vid.id)
@@ -20,7 +20,33 @@ def show(request):
             list_users.append(User.objects.get(id=com.Comment_User_id))
         tmp.append(list(zip(comments, list_users)))
         content.append(tmp)
-    return render(request,'videomusic.html', {"content":content, "user":auth.get_user(request).username})
+    return render(request, 'video.html', {"content":content, "user":auth.get_user(request).username})
+
+def showbasket(request):
+    content = []                  #[  [video, [(comment, name),(comment,name),()]]   ,  [video, [comments..]]     ]
+    for vid in Video.objects.filter(Video_type="Basket"):
+        tmp = []
+        tmp.append(vid)
+        comments = Comment.objects.filter(Comment_Video_id=vid.id)
+        list_users = []
+        for com in comments:
+            list_users.append(User.objects.get(id=com.Comment_User_id))
+        tmp.append(list(zip(comments, list_users)))
+        content.append(tmp)
+    return render(request, 'video.html', {"content":content, "user":auth.get_user(request).username})
+
+def showprogramming(request):
+    content = []                  #[  [video, [(comment, name),(comment,name),()]]   ,  [video, [comments..]]     ]
+    for vid in Video.objects.filter(Video_type="Programming"):
+        tmp = []
+        tmp.append(vid)
+        comments = Comment.objects.filter(Comment_Video_id=vid.id)
+        list_users = []
+        for com in comments:
+            list_users.append(User.objects.get(id=com.Comment_User_id))
+        tmp.append(list(zip(comments, list_users)))
+        content.append(tmp)
+    return render(request, 'video.html', {"content":content, "user":auth.get_user(request).username})
 
 def ShowOneVideo(request, video_id):
     args = {}

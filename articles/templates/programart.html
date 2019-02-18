@@ -50,9 +50,10 @@
           <h1 class="mb-0">СТАТЬИ
             <span class="text-primary">ПО ПРОГРАММУХЕ</span>
           </h1>
-          <div class="subheading mb-5">
-            <i class="fas fa-calculator"> Тут будут статьи по программухе</i>
-          </div>
+        {% for con in content %}
+          <h2> {{ con.0.Article_title }}</h2>
+          <p>{{ con.0.Article_content }}</p>
+          {% endfor %}
 
           </div>
         </section>
@@ -62,15 +63,15 @@
 
 
     <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script> -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script> -->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
     <!-- Custom scripts for this template -->
     <script src="{% static 'js/resume.min.js' %}"></script>
-
+    </div>
   </body>
 
 </html>
