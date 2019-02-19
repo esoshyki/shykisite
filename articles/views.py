@@ -8,12 +8,33 @@ from django.contrib import auth
 
 
 def musicart(request):
-    return render(request, "musicart.html")
+    content = []
+    for art in Article.objects.filter(Article_type="Music"):
+        tmp = []
+        tmp.append(art)
+        comments = CommentArt.objects.filter(CommentArt_Article_id=art.id)
+        list_users = []
+        for com in comments:
+            list_users.append(User.objects.get(id=com.CommentArt_User_id))
+        tmp.append(list(zip(comments, list_users)))
+        content.append(tmp)
+    return render(request, 'art.html', {'content': content, 'user':auth.get_user(request).username, "nameofart":"ПО МУЗЫКЕ"})
 # Create your views here.
-def basketart(request):
-    return render(request, 'basketart.html')
 
-def programart(requset):
+def basketart(request):
+    content = []
+    for art in Article.objects.filter(Article_type="Basket"):
+        tmp = []
+        tmp.append(art)
+        comments = CommentArt.objects.filter(CommentArt_Article_id=art.id)
+        list_users = []
+        for com in comments:
+            list_users.append(User.objects.get(id=com.CommentArt_User_id))
+        tmp.append(list(zip(comments, list_users)))
+        content.append(tmp)
+    return render(request, 'art.html', {'content': content, 'user':auth.get_user(request).username, "nameofart":"ПО БАСКЕТУ"})
+
+def programart(request):
     content = []
     for art in Article.objects.filter(Article_type="Programming"):
         tmp = []
@@ -24,4 +45,4 @@ def programart(requset):
             list_users.append(User.objects.get(id=com.CommentArt_User_id))
         tmp.append(list(zip(comments, list_users)))
         content.append(tmp)
-    return render(requset, 'programart.html', {'content': content, 'user':auth.get_user(requset).username})
+    return render(request, 'art.html', {'content': content, 'user':auth.get_user(request).username, "nameofart":"ПО ПРОГРАММУХЕ",})

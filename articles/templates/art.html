@@ -48,11 +48,12 @@
 
         <div class="my-auto">
           <h1 class="mb-0">СТАТЬИ
-            <span class="text-primary">ПО ПРОГРАММУХЕ</span>
+            <span class="text-primary">{{ nameofart }}</span>
           </h1>
         {% for con in content %}
           <h2> {{ con.0.Article_title }}</h2>
-          <p>{{ con.0.Article_content }}</p>
+            <p><i>Дата добавления {{ con.0.Article_date }}</i></p>
+          <hr id="{{ con.0.id }}" style="font-size: 17px">{{ con.0.Article_content }} </hr>
           {% endfor %}
 
           </div>
@@ -71,6 +72,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="{% static 'js/resume.min.js' %}"></script>
+
     </div>
   </body>
 
