@@ -151,4 +151,5 @@ nav {
     margin: 0 !important;
     border: none !important;
     background-position-y: 150px !important;
+    max-width: 100% !important;
 }
