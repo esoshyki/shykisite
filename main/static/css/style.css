@@ -84,6 +84,8 @@ nav {
     background-position-y: top;
     background-attachment: fixed;
     overflow: hidden;
+    background-clip: padding-box;
+    margin-top: -1px !important;
 }
 
 #education {
@@ -94,6 +96,8 @@ nav {
     background-attachment: fixed;
     overflow: hidden;  
     border: none !important;  
+    background-clip: padding-box;
+    margin-top: -1px !important;
 }
 
 #experience {
@@ -102,7 +106,9 @@ nav {
     background-size: cover;
     background-position-y: top;
     background-attachment: fixed;
-    overflow: hidden;    
+    overflow: hidden;  
+    background-clip: padding-box; 
+    margin-top: -1px !important;
 }
 
 #skills {
@@ -110,7 +116,9 @@ nav {
     background: url('../img/sf.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    overflow: hidden;    
+    overflow: hidden;   
+    background-clip: padding-box;
+    margin-top: -1px !important;
 }
 
 #interests {
@@ -118,7 +126,10 @@ nav {
     background: url('../img/sf.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    overflow: hidden;    
+    overflow: hidden; 
+    background-clip: padding-box;
+    margin-top: -1px !important;   
+    margin-top: -1px !important;
 }
 
 #awards {
@@ -126,7 +137,9 @@ nav {
     background: url('../img/sf.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    overflow: hidden;    
+    overflow: hidden;   
+    background-clip: padding-box; 
+    margin-top: -1px !important;
 }
 
 #my_part {
@@ -135,6 +148,8 @@ nav {
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;    
+    background-clip: padding-box;
+    margin-top: -1px !important;
 }
 
 
