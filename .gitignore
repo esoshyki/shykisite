@@ -1,0 +1,10 @@
+*.bash_history
+*.bashrc
+.cache/
+*.gitconfig
+.local/
+.python_history
+.pythonstartup.py
+.vimrc
+.virtualenvs/
+__pycache__/*
