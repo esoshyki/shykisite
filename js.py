@@ -10,4 +10,3 @@ print(json)
 myfile = open("ugolokravn.json", "w")
 json.dump(js, myfile)
 myfile.close()
-

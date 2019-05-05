@@ -27,6 +27,12 @@ body a {
     background: linear-gradient(to right, black, #333333) !important;
 }
 
+.img-fluid:hover {
+    size: 50px;
+    box-shadow: 3px 3px 5px black;
+    transition: 1 ease-in
+}
+
 nav {
     background: wheat !important;
 
@@ -181,4 +187,5 @@ nav {
     border: none !important;
     background-position-y: 0 !important;
     max-width: 100% !important;
+
 }
