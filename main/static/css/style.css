@@ -65,8 +65,12 @@ nav {
 .dropdown-item {
     font-family: 'Just Another Hand', cursive;
     font-size: 1rem;
+    color: black !important;
     }
 
+.dropdown-item:hover {
+    font-weight: 700 !important;
+}
 
 
 
