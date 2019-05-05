@@ -1,19 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
+/* VARIABLES */
+:root {
+    --first-section-top: 0px;
+}
 
-.html {
-    font-size: 18px;
-    }
+
+/*  TEXT STYLES */
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
 
 h1, h2, h3, h4, h5, h6, p, i, span {
     color: white;
     }
 
-body {
-    background: linear-gradient(to bottom right, black, #333333);
+.text-primary {
+    color: wheat !important;
 }
 
-.navbar navbar-expand-lg {
-    background: linear-gradient(to bottom right, #000033, #333333);
+body a {
+    color: wheat !important;
+}
+
+.html {
+    font-size: 18px;
+    }
+
+.container-fluid {
+    background: linear-gradient(to right, black, #333333) !important;
+}
+
+nav {
+    background: linear-gradient(to bottom right, #000033, #333333) !important;
 }
 
 .dropdown-toggle {
@@ -32,3 +47,108 @@ body {
     font-family: 'Just Another Hand', cursive;
     font-size: 1rem;
     }
+
+
+
+
+/* HEADER  */
+
+.header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-content: right;
+    padding: 10px;
+
+}
+
+.header-sign-in a {
+    font-family: 'Just Another Hand', cursive;
+    color: #fff !important;
+    font-weight: 400;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.header-sign-in a:hover {
+    font-weight: 700;
+    color: #333333;
+}
+
+/* BACKGOUNDS */
+
+
+#about {
+    vertical-align: middle;
+    background: url('../img/sf.jpg') no-repeat;
+    background-size: cover;
+    background-position-y: top;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+#education {
+    vertical-align: middle;
+    background: url('../img/sf2.jpg') no-repeat;
+    background-size: cover;
+    background-position-y: top;
+    background-attachment: fixed;
+    overflow: hidden;  
+    border: none !important;  
+}
+
+#experience {
+    vertical-align: middle;
+    background: url('../img/sf.jpg') no-repeat;
+    background-size: cover;
+    background-position-y: top;
+    background-attachment: fixed;
+    overflow: hidden;    
+}
+
+#skills {
+    vertical-align: middle;
+    background: url('../img/sf.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;    
+}
+
+#interests {
+    vertical-align: middle;
+    background: url('../img/sf.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;    
+}
+
+#awards {
+    vertical-align: middle;
+    background: url('../img/sf.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;    
+}
+
+#my_part {
+    vertical-align: middle;
+    background: url('../img/sf.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;    
+}
+
+
+
+
+
+.my-auto {
+    background: linear-gradient(to right, black, #333333) !important;   
+    padding: 20px;
+}
+
+.resume-section {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background-position-y: 150px !important;
+}
